@@ -9,13 +9,15 @@ chars = string.ascii_letters.lower()+ string.digits
 # then we set the bigip GTM virtual server that will be rx bad domain queries
 DNS = dns.resolver.Resolver()
 DNS.nameservers = ['10.1.10.201']
-# if VS it nos answering, this will stop execution dute timeout error. 
+# if VS it nos answering, this will stop execution due to timeout error. 
 
 # define a TLD to attach at the end of  the hostnames we're dynamically generating
-#+ we can add all TLDs as an array an addit to the join 
+#+ we can add all TLDs in the future as an array an  then add it to the join 
+
 dom = ".co"
 
 #initializing shit
+
 j = 0
 
 # here we start genrating random hostnames, attaching '.co' at then end of them #+ an put in all this in a query directed to our VS that has DNS configured.
